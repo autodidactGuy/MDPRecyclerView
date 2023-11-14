@@ -1,5 +1,6 @@
 package edu.miu.cs473.mdprecyclerview
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,5 +27,10 @@ class MainActivity : ComponentActivity() {
         products.add(Product(sampleImage,"MacBook M3 Max", "14-core CPU\n30-core GPU", 3499.00))
         val adapter = CustomAdapter(this@MainActivity,products)
         binding.productList.adapter = adapter
+
+        binding.cartBtn.setOnClickListener{
+            val intent = Intent(this@MainActivity, CartActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

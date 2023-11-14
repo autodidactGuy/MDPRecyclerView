@@ -18,7 +18,7 @@ class ProductActivity : ComponentActivity() {
         binding.imageView.setImageResource(intent.getIntExtra("productImage", androidx.core.R.drawable.ic_call_answer_video))
         binding.productTitle.text = intent.getStringExtra("productTitle")
         binding.desc.text = intent.getStringExtra("productDesc")
-        binding.priceText.text = intent.getDoubleExtra("productPrice",0.00).toString()
+        binding.priceText.text = "$${intent.getDoubleExtra("productPrice", 0.00)}"
 
         binding.homeBtn.setOnClickListener{
             val intent = Intent(this@ProductActivity, MainActivity::class.java)
